@@ -3,10 +3,25 @@
 import { useState, useCallback, useEffect, TouchEvent } from "react";
 import Image from "next/image";
 
+const YouTubeEmbed = ({ videoId }: { videoId: string }) => (
+  <div className="relative w-full h-full">
+    <iframe
+      title="YouTube video player"
+      src={`https://www.youtube.com/embed/${videoId}`}
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+      className="w-full h-full"
+      style={{ aspectRatio: '16/9' }}
+    />
+  </div>
+);
+
 interface ImageGalleryProps {
   images: {
     src: string;
     alt: string;
+    type?: 'image' | 'youtube';
+    videoId?: string;
   }[];
   onClose: () => void;
   initialIndex?: number;
@@ -94,21 +109,25 @@ export default function ImageGallery({ images, onClose, initialIndex = 0 }: Imag
           {currentIndex + 1} / {images.length}
         </div>
 
-        {/* Main image */}
+        {/* Main image/video */}
         <div 
           className="relative h-[calc(100vh-8rem)] sm:h-auto sm:aspect-video w-full overflow-hidden rounded-sm"
           onTouchStart={onTouchStart}
           onTouchMove={onTouchMove}
           onTouchEnd={onTouchEnd}
         >
-          <Image
-            src={images[currentIndex].src}
-            alt={images[currentIndex].alt}
-            fill
-            className="object-contain"
-            sizes="(max-width: 1024px) 100vw, 1024px"
-            priority
-          />
+          {images[currentIndex].type === 'youtube' && images[currentIndex].videoId ? (
+            <YouTubeEmbed videoId={images[currentIndex].videoId} />
+          ) : (
+            <Image
+              src={images[currentIndex].src}
+              alt={images[currentIndex].alt}
+              fill
+              className="object-contain"
+              sizes="(max-width: 1024px) 100vw, 1024px"
+              priority
+            />
+          )}
           
           {/* Touch swipe indicator */}
           {touchStart && touchEnd && Math.abs(touchStart - touchEnd) > 20 && (
@@ -156,13 +175,23 @@ export default function ImageGallery({ images, onClose, initialIndex = 0 }: Imag
                       : "opacity-50 hover:opacity-75"
                   }`}
                 >
-                  <Image
-                    src={image.src}
-                    alt={image.alt}
-                    fill
-                    className="object-cover"
-                    sizes="96px"
-                  />
+                  {image.type === 'youtube' && image.videoId ? (
+                    <Image
+                      src={`https://img.youtube.com/vi/${image.videoId}/0.jpg`}
+                      alt={image.alt}
+                      fill
+                      className="object-cover"
+                      sizes="96px"
+                    />
+                  ) : (
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      fill
+                      className="object-cover"
+                      sizes="96px"
+                    />
+                  )}
                 </button>
               ))}
             </div>

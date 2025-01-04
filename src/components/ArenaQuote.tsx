@@ -30,17 +30,22 @@ export default function ArenaQuote() {
 
   return (
     <>
-      <motion.span 
-        className="text-accent cursor-pointer hover:opacity-80 transition-opacity inline-block"
+      <h2 
+        className="text-xl text-[#ededed70] cursor-pointer hover:opacity-80 transition-opacity"
         onClick={() => setIsOpen(true)}
         onKeyDown={(e) => e.key === 'Enter' && setIsOpen(true)}
         role="button"
         tabIndex={0}
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
       >
-        ARENA?
-      </motion.span>
+        ARE YOU IN THE... 
+        <motion.span 
+          className="text-accent inline-block"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          ARENA?
+        </motion.span>
+      </h2>
 
       {mounted && createPortal(
         <AnimatePresence>

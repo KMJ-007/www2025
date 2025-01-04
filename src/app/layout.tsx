@@ -3,6 +3,7 @@ import { Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ArenaQuote from "@/components/ArenaQuote";
 import Navigation from "@/components/Navigation";
+import Link from "next/link";
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -22,16 +23,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistMono.variable}`}>
-        <div className="min-h-screen p-4">
-          <div className="flex flex-col sm:flex-row gap-8 sm:gap-16 p-4">
+        <div className="min-h-screen p-2 sm:p-4">
+          <div className="flex flex-col sm:flex-row gap-8 sm:gap-16 p-0 sm:p-4">
             <div className="flex-1">
               <header className="flex flex-col gap-4 sm:mt-0 mt-12">
-                <h1 className="text-4xl font-bold">
-                  Karan Janthe
-                </h1>
-                <h2 className="text-xl text-[#ededed70]">
-                  ARE YOU IN THE... <ArenaQuote />
-                </h2>
+                <Link href="/" className="hover:opacity-80 transition-opacity w-fit">
+                  <h1 className="text-4xl font-bold">
+                    Karan Janthe
+                  </h1>
+                </Link>
+                <ArenaQuote />
               </header>
               
               <div className="flex flex-col sm:flex-row gap-8">

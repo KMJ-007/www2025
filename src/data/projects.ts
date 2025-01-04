@@ -11,19 +11,21 @@ export interface Project {
   images: {
     src: string;
     alt: string;
+    type?: 'image' | 'youtube';
+    videoId?: string;
   }[];
 }
 
 export const projects: Project[] = [
   {
-    title: "KINO AI",
-    date: "2025-01",
-    headline: "A multimodal AI system for streamlining the creative filmmaking process.",
-    description: "Building multimodal machine learning systems to help filmmakers streamline their creative process. Working on video understanding, generation, and editing. The system combines state-of-the-art computer vision models with natural language processing to assist in various aspects of film production, from script analysis to post-production workflows.",
-    tags: ["ML", "Video", "AI"],
+    title: "WTFATHON",
+    date: "2024-09",
+    headline: "A decentralized cross-device model training system for large-scale ML.",
+    description: "A decentralized cross-device model training system with model and tensor parallelism to reduce compute needed to train large models. The system enables efficient distribution of model training across multiple devices, optimizing resource utilization and reducing training time through innovative parallelization techniques.",
+    tags: ["Distributed Systems", "ML"],
     links: [
       {
-        title: "Demo",
+        title: "GitHub",
         url: "#"
       }
     ],
@@ -31,15 +33,49 @@ export const projects: Project[] = [
       {
         src: "https://fastly.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U",
         alt: "Sample project image 1"
-      },
-      {
-        src: "https://fastly.picsum.photos/id/238/200/300.jpg?hmac=WE3qoMWE649PAx6qL24yCJRSKQY76T4wc1M5GJpAPs8",
-        alt: "Sample project image 2"
       }
     ]
   },
   {
-    title: "ARCEUS",
+    title: "LazyGH",
+    date: "2024-09",
+    headline: "A decentralized cross-device model training system for large-scale ML.",
+    description: "A decentralized cross-device model training system with model and tensor parallelism to reduce compute needed to train large models. The system enables efficient distribution of model training across multiple devices, optimizing resource utilization and reducing training time through innovative parallelization techniques.",
+    tags: ["Distributed Systems", "ML"],
+    links: [
+      {
+        title: "GitHub",
+        url: "#"
+      }
+    ],
+    images: [
+      {
+        src: "https://fastly.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U",
+        alt: "Sample project image 1"
+      }
+    ]
+  },
+  {
+    title: "Finnovate-IIT ghandhinagar",
+    date: "2024-06",
+    headline: "A decentralized cross-device model training system for large-scale ML.",
+    description: "A decentralized cross-device model training system with model and tensor parallelism to reduce compute needed to train large models. The system enables efficient distribution of model training across multiple devices, optimizing resource utilization and reducing training time through innovative parallelization techniques.",
+    tags: ["Distributed Systems", "ML"],
+    links: [
+      {
+        title: "GitHub",
+        url: "#"
+      }
+    ],
+    images: [
+      {
+        src: "https://fastly.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U",
+        alt: "Sample project image 1"
+      }
+    ]
+  },
+  {
+    title: "Misato Ai Companion",
     date: "2024-03",
     headline: "A decentralized cross-device model training system for large-scale ML.",
     description: "A decentralized cross-device model training system with model and tensor parallelism to reduce compute needed to train large models. The system enables efficient distribution of model training across multiple devices, optimizing resource utilization and reducing training time through innovative parallelization techniques.",
@@ -52,40 +88,248 @@ export const projects: Project[] = [
     ],
     images: [
       {
-        src: "https://fastly.picsum.photos/id/239/200/300.jpg?hmac=7xz8fPYz03uWqD9jP8TkqoMXxqDAQCvz9TQ9GBj5gZI",
+        src: "https://fastly.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U",
         alt: "Sample project image 1"
       }
     ]
   },
   {
-    title: "AI AGENTS AS CITIZENS",
+    title: "RustyScheme",
     date: "2024-01",
-    headline: "City-scale simulation with AI agents for optimizing urban mobility.",
-    description: "City simulation of Los Angeles with AI Agents, simulating human behaviour and optimizing transit routing with Reinforcement Learning to maximize mobility at the lowest carbon cost. Finalists @ AI Berkeley Hackathon. The project demonstrates how AI agents can be used to model complex urban systems and optimize city-wide transportation networks while considering environmental impact.",
-    tags: ["AI", "Simulation", "RL"],
+    headline: "A decentralized cross-device model training system for large-scale ML.",
+    description: "A decentralized cross-device model training system with model and tensor parallelism to reduce compute needed to train large models. The system enables efficient distribution of model training across multiple devices, optimizing resource utilization and reducing training time through innovative parallelization techniques.",
+    tags: ["Distributed Systems", "ML"],
     links: [
       {
-        title: "Demo",
-        url: "#"
-      },
+        title: "GitHub",
+        url: "https://github.com/daspartho/DistillClassifier"
+      }
+    ],
+    images: [
       {
-        title: "Paper",
+        src: "https://fastly.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U",
+        alt: "Sample project image 1"
+      }
+    ]
+  },
+  {
+    title: "Hackclub Workshop",
+    date: "2023-12",
+    headline: "Creative coding workshop at epoch delhi hackclub.",
+    description: "A decentralized cross-device model training system with model and tensor parallelism to reduce compute needed to train large models. The system enables efficient distribution of model training across multiple devices, optimizing resource utilization and reducing training time through innovative parallelization techniques.",
+    tags: ["Distributed Systems", "ML"],
+    links: [
+      {
+        title: "producthunt",
         url: "#"
       }
     ],
     images: [
       {
-        src: "https://fastly.picsum.photos/id/240/200/300.jpg?hmac=QPGS9Uu4v5HvfVXoJV9STvmhRQF-D4JXc7tHZHoHBYE",
+        src: "https://fastly.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U",
         alt: "Sample project image 1"
+      }
+    ]
+  },
+  {
+    title: "Snapcraft",
+    date: "2023-11",
+    headline: "A decentralized cross-device model training system for large-scale ML.",
+    description: "A decentralized cross-device model training system with model and tensor parallelism to reduce compute needed to train large models. The system enables efficient distribution of model training across multiple devices, optimizing resource utilization and reducing training time through innovative parallelization techniques.",
+    tags: ["Distributed Systems", "ML"],
+    links: [
+      {
+        title: "producthunt",
+        url: "#"
+      }
+    ],
+    images: [
+      {
+        src: "https://fastly.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U",
+        alt: "Sample project image 1"
+      }
+    ]
+  },
+  {
+    title: "DistillClassifier",
+    date: "2023-08",
+    headline: "A decentralized cross-device model training system for large-scale ML.",
+    description: "A decentralized cross-device model training system with model and tensor parallelism to reduce compute needed to train large models. The system enables efficient distribution of model training across multiple devices, optimizing resource utilization and reducing training time through innovative parallelization techniques.",
+    tags: ["Distributed Systems", "ML"],
+    links: [
+      {
+        title: "GitHub",
+        url: "https://github.com/daspartho/DistillClassifier"
+      }
+    ],
+    images: [
+      {
+        src: "https://fastly.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U",
+        alt: "Sample project image 1"
+      }
+    ]
+  },
+  {
+    title: "WarpLearn-Research Paper buddy",
+    date: "2023-04",
+    headline: "A decentralized cross-device model training system for large-scale ML.",
+    description: "A decentralized cross-device model training system with model and tensor parallelism to reduce compute needed to train large models. The system enables efficient distribution of model training across multiple devices, optimizing resource utilization and reducing training time through innovative parallelization techniques.",
+    tags: ["Distributed Systems", "ML"],
+    links: [
+      {
+        title: "GitHub",
+        url: "#"
+      }
+    ],
+    images: [
+      {
+        src: "https://fastly.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U",
+        alt: "Sample project image 1"
+      }
+    ]
+  },
+  {
+    title: "AR-Direction-compass",
+    date: "2023-03",
+    headline: "A decentralized cross-device model training system for large-scale ML.",
+    description: "A decentralized cross-device model training system with model and tensor parallelism to reduce compute needed to train large models. The system enables efficient distribution of model training across multiple devices, optimizing resource utilization and reducing training time through innovative parallelization techniques.",
+    tags: ["AR", "hackathon"],
+    links: [
+      {
+        title: "producthunt",
+        url: "#"
+      }
+    ],
+    images: [
+      {
+        src: "https://fastly.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U",
+        alt: "Sample project image 1"
+      }
+    ]
+  },
+  {
+    title: "Smart Agent",
+    date: "2022-09",
+    headline: "Taught creative coding to local college students",
+    description: "I taught creative coding to local college students. I taught them how to code in python and how to use p5js to create interactive art, yes you can make art with code. I also taught them how to use AI to generate art. It was a fun experience to teach and learn from them.",
+    tags: ["startup"],
+    links: [
+      {
+        title: "Demo",
+        url: "https://online.smartagent.one/home"
+      }
+    ],
+    images: [
+      {
+        src: "/images/cc-wsh-1.jpeg",
+        alt: "Creative Coding Workshop"
       },
       {
-        src: "https://fastly.picsum.photos/id/241/200/300.jpg?hmac=0NxbYA75YSJ0VY6A9YI4-pMKvkYP5ry3CfFdxL_GCJE",
-        alt: "Sample project image 2"
+        src: "/images/cc-wsh-2.jpeg",
+        alt: "Creative Coding Workshop"
       },
       {
-        src: "https://fastly.picsum.photos/id/242/200/300.jpg?hmac=S3_Su9NK5xPz93LJkPtB_8BsuAB0JKjGXdQz_k8dC-M",
-        alt: "Sample project image 3"
+        src: "/images/cc-wsh-3.jpeg",
+        alt: "Creative Coding Workshop"
+      },
+      {
+        src: "/images/cc-wsh-4.jpeg",
+        alt: "Creative Coding Workshop"
+      }
+    ]
+  },
+  {
+    title: "Creative Coding Workshop",
+    date: "2022-09",
+    headline: "Taught creative coding to local college students",
+    description: "I taught creative coding to local college students. I taught them how to code in python and how to use p5js to create interactive art, yes you can make art with code. I also taught them how to use AI to generate art. It was a fun experience to teach and learn from them.",
+    tags: ["creative coding", "workshop"],
+    images: [
+      {
+        src: "/images/cc-wsh-1.jpeg",
+        alt: "Creative Coding Workshop"
+      },
+      {
+        src: "/images/cc-wsh-2.jpeg",
+        alt: "Creative Coding Workshop"
+      },
+      {
+        src: "/images/cc-wsh-3.jpeg",
+        alt: "Creative Coding Workshop"
+      },
+      {
+        src: "/images/cc-wsh-4.jpeg",
+        alt: "Creative Coding Workshop"
+      }
+    ]
+  },
+  {
+    title: "PurgeConsole",
+    date: "2022-06",
+    headline: "Decentralized Network for IOT",
+    description: "Interlynk was a decentralized network for IoT devices. It was a platform that allows IoT devices to communicate with each other without the need for a central server. User gets coins for being part of the network as the reward, it was really good concept, but didn't worked out.\n\n I created the MVP in react native single handedly in 4 days. this was fun to work on cause not only i learned react native, but also i learned how BLE works, and how to integrate BLE and store data on the blockchain and making sure how to make it end to end work.We also won the web3 2022 hackathon for the best hackathon project.",
+    tags: ["project"],
+    links: [
+      {
+        title: "Site",
+        url: "https://web.archive.org/web/20230304135018/https://www.interlynk.space/"
+      },
+      {
+        title: "White Paper",
+        url: "https://web.archive.org/web/20220709180239/https://www.interlynk.space/_files/ugd/7aeff5_0f8af081f0f141a8b9c4e8fb42b57e97.pdf"
+      }
+    ],
+    images: [
+      {
+        src: "/images/interlynk.jpeg",
+        alt: "Interlynk"
+      }
+    ]
+  },
+  {
+    title: "Interlynk",
+    date: "2022-06",
+    headline: "Decentralized Network for IOT",
+    description: "Interlynk was a decentralized network for IoT devices. It was a platform that allows IoT devices to communicate with each other without the need for a central server. User gets coins for being part of the network as the reward, it was really good concept, but didn't worked out.\n\n I created the MVP in react native single handedly in 4 days. this was fun to work on cause not only i learned react native, but also i learned how BLE works, and how to integrate BLE and store data on the blockchain and making sure how to make it end to end work.We also won the web3 2022 hackathon for the best hackathon project.",
+    tags: ["startup"],
+    links: [
+      {
+        title: "Site",
+        url: "https://web.archive.org/web/20230304135018/https://www.interlynk.space/"
+      },
+      {
+        title: "White Paper",
+        url: "https://web.archive.org/web/20220709180239/https://www.interlynk.space/_files/ugd/7aeff5_0f8af081f0f141a8b9c4e8fb42b57e97.pdf"
+      }
+    ],
+    images: [
+      {
+        src: "/images/interlynk.jpeg",
+        alt: "Interlynk"
+      }
+    ]
+  },
+  {
+    title: "ASCII Video",
+    date: "2022-03",
+    headline: "Convert live camera feed to ASCII art",
+    description: "Was fun to play with, was learning and exploring creative coding.",
+    tags: ["creative coding", "project"],
+    links: [
+      {
+        title: "GitHub",
+        url: "https://github.com/KMJ-007/silver-octo-eureka"
+      },
+      {
+        title: "Demo",
+        url: "https://kmj-007.github.io/silver-octo-eureka/"
+      }
+    ],
+    images: [
+      {
+        src: "/images/ascii-video.jpeg",
+        alt: "Image of Ascii Art"
       }
     ]
   }
-]; 
+];

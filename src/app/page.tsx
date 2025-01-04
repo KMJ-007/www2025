@@ -1,4 +1,3 @@
-import Bio from "@/components/Bio";
 import RecentReadings from "@/components/RecentReadings";
 import SocialLinks from "@/components/SocialLinks";
 
