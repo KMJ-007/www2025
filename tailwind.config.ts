@@ -11,7 +11,23 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        accent: "var(--accent)",
       },
+      textColor: {
+        foreground: {
+          DEFAULT: "var(--foreground)",
+          70: "color-mix(in srgb, var(--foreground) 70%, transparent)",
+        },
+      },
+      keyframes: {
+        scan: {
+          '0%': { transform: 'translateY(-100%)' },
+          '100%': { transform: 'translateY(100%)' }
+        }
+      },
+      animation: {
+        scan: 'scan 2s linear infinite'
+      }
     },
   },
   plugins: [],
