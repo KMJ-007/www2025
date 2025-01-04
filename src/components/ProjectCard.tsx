@@ -24,7 +24,7 @@ interface ProjectCardProps {
 export default function ProjectCard({ project }: ProjectCardProps) {
   const [showGallery, setShowGallery] = useState(false);
   const [initialImageIndex, setInitialImageIndex] = useState(0);
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [showDescription, setShowDescription] = useState(false);
 
   const openGallery = (index: number) => {
     setInitialImageIndex(index);
@@ -39,54 +39,62 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
   return (
     <>
-      <div className="group relative bg-neutral-900/30 p-3 sm:p-6 transition-all hover:bg-neutral-900/50 rounded-lg w-full">
-        <div className="sm:flex sm:gap-8">
-          <div className="flex-1 space-y-3 sm:space-y-5">
-            <div className="flex items-start justify-between gap-3 sm:gap-4">
-              <h3 className="font-mono text-base sm:text-lg tracking-[0.2em] text-neutral-200 group-hover:text-green-400 transition-colors">
-                {project.title}
-              </h3>
-              <span className="font-mono text-xs sm:text-sm text-neutral-500 tracking-wider whitespace-nowrap">
-                {project.formattedDate}
-              </span>
-            </div>
+      <div className="group relative bg-neutral-900/30 p-4 sm:p-5 transition-all hover:bg-neutral-900/50 rounded-lg w-full h-full flex flex-col">
+        <div className="flex flex-col h-full">
+          <div className="flex items-start justify-between gap-3">
+            <h3 className="font-mono text-base tracking-[0.2em] text-neutral-200 group-hover:text-green-400 transition-colors">
+              {project.title}
+            </h3>
+            <span className="font-mono text-xs text-neutral-500 tracking-wider whitespace-nowrap">
+              {project.formattedDate}
+            </span>
+          </div>
 
-            <p className="text-sm sm:text-base text-neutral-300 font-mono leading-6 sm:leading-7 max-w-3xl">
+          <div className="mt-4 space-y-4 flex-1">
+            <p className="text-sm text-neutral-300 font-mono leading-6">
               {project.headline}
             </p>
             
-            <div className={`overflow-hidden transition-all duration-300 ${isExpanded ? 'max-h-96' : 'max-h-0 sm:max-h-96'}`}>
-              <p className="text-xs sm:text-sm text-neutral-400 font-mono leading-5 sm:leading-6 max-w-3xl whitespace-pre-line">
-                {project.description}
-              </p>
-            </div>
+            {showDescription && (
+              <div className="relative">
+                <div className="overflow-hidden transition-all duration-300">
+                  <p className="text-xs text-neutral-400 font-mono leading-5 whitespace-pre-line">
+                    {project.description}
+                  </p>
+                </div>
+              </div>
+            )}
 
-            <button
-              type="button"
-              onClick={() => setIsExpanded(!isExpanded)}
-              className="sm:hidden text-sm text-neutral-500 hover:text-neutral-400 font-mono tracking-wider"
-            >
-              [{isExpanded ? 'Show Less' : 'Read More'}]
-            </button>
-            
-            <div className="flex flex-wrap gap-1.5 sm:gap-2">
+            {project.description && (
+              <button
+                type="button"
+                onClick={() => setShowDescription(!showDescription)}
+                className="text-xs text-neutral-500 hover:text-neutral-400 font-mono tracking-wider"
+              >
+                [{showDescription ? 'Show Less' : 'Read More'}]
+              </button>
+            )}
+
+            <div className="flex flex-wrap gap-1.5">
               {project.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="font-mono text-[10px] sm:text-xs text-green-500/70 bg-green-900/20 px-3 sm:px-3 py-0.5 sm:py-1 rounded-full tracking-wider"
+                  className="font-mono text-[10px] text-green-500/70 bg-green-900/20 px-2 py-0.5 rounded-full tracking-wider"
                 >
                   {tag}
                 </span>
               ))}
             </div>
+          </div>
 
+          <div className="mt-4">
             {project.links && (
-              <div className="flex gap-3 sm:gap-4">
+              <div className="flex gap-3 flex-wrap">
                 {project.links.map((link) => (
                   <Link
                     key={link.title}
                     href={link.url}
-                    className="text-xs sm:text-sm text-neutral-400 hover:text-green-400 transition-colors font-mono tracking-wider group-hover:animate-pulse"
+                    className="text-xs text-neutral-400 hover:text-green-400 transition-colors font-mono tracking-wider"
                   >
                     [{link.title}] →
                   </Link>
@@ -96,7 +104,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           </div>
 
           {project.images.length > 0 && (
-            <div className="mt-3 sm:mt-0 sm:w-80">
+            <div className="mt-4 space-y-2">
               <button
                 type="button"
                 onClick={() => openGallery(0)}
@@ -115,13 +123,13 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               </button>
 
               {project.images.length > 1 && (
-                <div className="mt-2 sm:mt-3 flex gap-2 sm:gap-3 overflow-x-auto pb-1">
+                <div className="flex gap-1 overflow-x-auto">
                   {project.images.slice(1).map((image, index) => (
                     <button
                       key={image.src}
                       type="button"
                       onClick={() => openGallery(index + 1)}
-                      className="relative h-16 w-24 flex-shrink-0 overflow-hidden rounded-lg bg-neutral-800/50 hover:bg-neutral-800/70 transition-colors"
+                      className="relative h-12 w-16 flex-shrink-0 overflow-hidden rounded bg-neutral-800/50 hover:bg-neutral-800/70 transition-colors"
                     >
                       {image.type === 'youtube' ? (
                         <Image
