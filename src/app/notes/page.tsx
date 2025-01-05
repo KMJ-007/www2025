@@ -1,5 +1,11 @@
 import React from 'react';
 
+/**
+ * 
+ * https://web.archive.org/web/20230327180709/https://210ethan.github.io/knowledge/advice.html
+ * https://joodaloop.com/bad-advice/
+ */
+
 export default function NotesPage() {
   const notes = [
     {

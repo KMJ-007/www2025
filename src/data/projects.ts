@@ -266,8 +266,8 @@ export const projects: Project[] = [
   {
     title: "PurgeConsole",
     date: "2022-06",
-    headline: "",
-    description: "Interlynk was a decentralized network for IoT devices. It was a platform that allows IoT devices to communicate with each other without the need for a central server. User gets coins for being part of the network as the reward, it was really good concept, but didn't worked out.\n\n I created the MVP in react native single handedly in 4 days. this was fun to work on cause not only i learned react native, but also i learned how BLE works, and how to integrate BLE and store data on the blockchain and making sure how to make it end to end work.We also won the web3 2022 hackathon for the best hackathon project.",
+    headline: "Simple Vscode Extension to get rid of all console logs in your code",
+    description: "",
     tags: ["project"],
     links: [
       {
