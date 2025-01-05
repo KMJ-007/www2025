@@ -81,7 +81,7 @@ export default function ArenaQuote() {
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.1 }}
                 >
-                  "It's not the critic who counts, not the man who points out how the strong man stumbled, or when the doer of deeds could have done better. The credit belongs to the man who is actually in the arena; whose face is marred by dust and sweat and blood; who strives valiantly; who errs and comes short again and again; who knows the great enthusiasms, the great devotions and spends himself in a worth cause; who at the best, knows in the end the triumph of high achievement; and who at the worst if he fails, at least fails while daring greatly, so that his place shall never be with those cold and timid souls who know neither victory or defeat."
+                  &ldquo;It&apos;s not the critic who counts, not the man who points out how the strong man stumbled, or when the doer of deeds could have done better. The credit belongs to the man who is actually in the arena; whose face is marred by dust and sweat and blood; who strives valiantly; who errs and comes short again and again; who knows the great enthusiasms, the great devotions and spends himself in a worth cause; who at the best, knows in the end the triumph of high achievement; and who at the worst if he fails, at least fails while daring greatly, so that his place shall never be with those cold and timid souls who know neither victory or defeat.&rdquo;
                 </motion.p>
                 <motion.p 
                   className="mt-4 text-[#ededed70] text-sm"

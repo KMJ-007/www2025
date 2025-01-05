@@ -266,23 +266,23 @@ export const projects: Project[] = [
   {
     title: "PurgeConsole",
     date: "2022-06",
-    headline: "Decentralized Network for IOT",
+    headline: "",
     description: "Interlynk was a decentralized network for IoT devices. It was a platform that allows IoT devices to communicate with each other without the need for a central server. User gets coins for being part of the network as the reward, it was really good concept, but didn't worked out.\n\n I created the MVP in react native single handedly in 4 days. this was fun to work on cause not only i learned react native, but also i learned how BLE works, and how to integrate BLE and store data on the blockchain and making sure how to make it end to end work.We also won the web3 2022 hackathon for the best hackathon project.",
     tags: ["project"],
     links: [
       {
-        title: "Site",
-        url: "https://web.archive.org/web/20230304135018/https://www.interlynk.space/"
+        title: "Github",
+        url: "https://github.com/KMJ-007/purgeconsole"
       },
       {
-        title: "White Paper",
-        url: "https://web.archive.org/web/20220709180239/https://www.interlynk.space/_files/ugd/7aeff5_0f8af081f0f141a8b9c4e8fb42b57e97.pdf"
+        title: "Download",
+        url: "https://marketplace.visualstudio.com/items?itemName=KaranJanthe.purgeConsole"
       }
     ],
     images: [
       {
-        src: "/images/interlynk.jpeg",
-        alt: "Interlynk"
+        src: "/images/purgeconsole.gif",
+        alt: "PurgeConsole"
       }
     ]
   },
