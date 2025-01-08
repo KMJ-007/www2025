@@ -18,6 +18,29 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: "Bindi Sheth",
+    date: "2025-01",
+    headline: "Created a website for Bindi Sheth to showcase her work, she is documentary and fashion photographer.",
+    description: "I met Bindi Sheth accidently. we shared lot of common rabbit holes which i found interesting. I really liked her work and the stories she tells through her work, her art collection is really good. I’m really thankful to have made a new friend with whom I can share my curiosity. I usually don't design or create website for people, but this was fun to do.",
+    tags: ["Design", "website"],
+    links: [
+      {
+        title: "Website",
+        url: "https://bindisheth.com"
+      },
+      {
+        title: "Checkout her work",
+        url: "https://www.instagram.com/sheth.bindi"
+      }
+    ],
+    images: [
+      {
+        src: "/images/bindi_sheth.jpeg",
+        alt: "Bindi Sheth"
+      }
+    ]
+  },
+  {
     title: "WTFATHON",
     date: "2024-09",
     headline: "A decentralized cross-device model training system for large-scale ML.",
@@ -210,7 +233,7 @@ export const projects: Project[] = [
   {
     title: "Smart Agent",
     date: "2022-09",
-    headline: "Taught creative coding to local college students",
+    headline: "One  for all the textile agents to manage their business, 1700cr GMV till date(31st Dec 2024)",
     description: "I taught creative coding to local college students. I taught them how to code in python and how to use p5js to create interactive art, yes you can make art with code. I also taught them how to use AI to generate art. It was a fun experience to teach and learn from them.",
     tags: ["startup"],
     links: [
@@ -221,21 +244,9 @@ export const projects: Project[] = [
     ],
     images: [
       {
-        src: "/images/cc-wsh-1.jpeg",
-        alt: "Creative Coding Workshop"
+        src: "/images/smartagent.jpeg",
+        alt: "Smart Agent"
       },
-      {
-        src: "/images/cc-wsh-2.jpeg",
-        alt: "Creative Coding Workshop"
-      },
-      {
-        src: "/images/cc-wsh-3.jpeg",
-        alt: "Creative Coding Workshop"
-      },
-      {
-        src: "/images/cc-wsh-4.jpeg",
-        alt: "Creative Coding Workshop"
-      }
     ]
   },
   {
