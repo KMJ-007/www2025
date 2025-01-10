@@ -11,7 +11,7 @@ export interface Project {
   images: {
     src: string;
     alt: string;
-    type?: 'image' | 'youtube';
+    type?: 'image' | 'youtube' | 'video';
     videoId?: string;
   }[];
 }
@@ -67,11 +67,13 @@ export const projects: Project[] = [
       },
       {
         src: "/images/pull_ups.mp4",
-        alt: "Pull ups"
+        alt: "Pull ups",
+        type: "video"
       },
       {
         src: "/images/weight_machine.mp4",
-        alt: "Weight Machine"
+        alt: "Weight Machine",
+        type: "video"
       },
     ]
   },

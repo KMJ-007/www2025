@@ -17,6 +17,24 @@ const YouTubeEmbed = ({ videoId }: { videoId: string }) => (
   </div>
 );
 
+const VideoPlayer = ({ src }: { src: string }) => (
+  <video 
+    controls
+    className="w-full h-full object-cover"
+    playsInline
+  >
+    <source src={src} type="video/mp4" />
+    <track 
+      kind="captions"
+      src=""
+      label="English"
+      srcLang="en"
+      default
+    />
+    Your browser does not support the video tag.
+  </video>
+);
+
 interface ProjectCardProps {
   project: Project & { formattedDate: string };
 }
@@ -112,6 +130,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               >
                 {project.images[0].type === 'youtube' && project.images[0].videoId ? (
                   <YouTubeEmbed videoId={project.images[0].videoId} />
+                ) : project.images[0].type === 'video' ? (
+                  <VideoPlayer src={project.images[0].src} />
                 ) : (
                   <Image
                     src={project.images[0].src}
@@ -138,6 +158,10 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                           fill
                           className="object-cover"
                         />
+                      ) : image.type === 'video' ? (
+                        <div className="w-full h-full flex items-center justify-center bg-neutral-800">
+                          <span className="text-xs text-neutral-400">Video</span>
+                        </div>
                       ) : (
                         <Image
                           src={image.src}

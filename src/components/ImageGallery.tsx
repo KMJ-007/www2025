@@ -16,11 +16,30 @@ const YouTubeEmbed = ({ videoId }: { videoId: string }) => (
   </div>
 );
 
+const VideoPlayer = ({ src }: { src: string }) => (
+  <video 
+    controls
+    className="w-full h-full"
+    playsInline
+    autoPlay
+  >
+    <source src={src} type="video/mp4" />
+    <track 
+      kind="captions"
+      src=""
+      label="English"
+      srcLang="en"
+      default
+    />
+    Your browser does not support the video tag.
+  </video>
+);
+
 interface ImageGalleryProps {
   images: {
     src: string;
     alt: string;
-    type?: 'image' | 'youtube';
+    type?: 'image' | 'youtube' | 'video';
     videoId?: string;
   }[];
   onClose: () => void;
@@ -118,6 +137,8 @@ export default function ImageGallery({ images, onClose, initialIndex = 0 }: Imag
         >
           {images[currentIndex].type === 'youtube' && images[currentIndex].videoId ? (
             <YouTubeEmbed videoId={images[currentIndex].videoId} />
+          ) : images[currentIndex].type === 'video' ? (
+            <VideoPlayer src={images[currentIndex].src} />
           ) : (
             <Image
               src={images[currentIndex].src}
@@ -183,6 +204,10 @@ export default function ImageGallery({ images, onClose, initialIndex = 0 }: Imag
                       className="object-cover"
                       sizes="96px"
                     />
+                  ) : image.type === 'video' ? (
+                    <div className="w-full h-full flex items-center justify-center bg-neutral-800">
+                      <span className="text-xs text-neutral-400">Video</span>
+                    </div>
                   ) : (
                     <Image
                       src={image.src}
