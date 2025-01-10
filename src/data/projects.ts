@@ -43,142 +43,175 @@ export const projects: Project[] = [
   {
     title: "WTFATHON",
     date: "2024-09",
-    headline: "A decentralized cross-device model training system for large-scale ML.",
-    description: "A decentralized cross-device model training system with model and tensor parallelism to reduce compute needed to train large models. The system enables efficient distribution of model training across multiple devices, optimizing resource utilization and reducing training time through innovative parallelization techniques.",
-    tags: ["Distributed Systems", "ML"],
+    headline: "I hosted stupidathon where 30 people gathered to make stupid things.",
+    description: "I was bored with same stupid hackathon happening, where the original fun and ethos were lost, people were just doing the hackathon for the sack of it, and for putting in the resume.\n and sponsors were just throwing the client's project in the name of hackathon, it was became just a shit show!\n I hated it, so rather than just bitching about it, i decided to do something about it.\n I hosted stupidathon where 30 people gathered to make stupid things. and people made some really stupid things, and enjoyed it, there was no prize, no judges, just fun and enjoyment.",
+    tags: ["hackathon", "event"],
     links: [
       {
-        title: "GitHub",
-        url: "#"
+        title: "Stupid Things",
+        url: "https://www.wtfuckathon.com/"
+      },
+      {
+        title: "PHOTOS",
+        url: "https://photos.app.goo.gl/DFWB8B6vFBcBxiE57"
       }
     ],
     images: [
       {
-        src: "https://fastly.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U",
-        alt: "Sample project image 1"
-      }
+        src: "/images/wtfathon_poster.jpeg",
+        alt: "WTFATHON"
+      },
+      {
+        src: "/images/wtfathon.jpeg",
+        alt: "WTFATHON"
+      },
+      {
+        src: "/images/pull_ups.mp4",
+        alt: "Pull ups"
+      },
+      {
+        src: "/images/weight_machine.mp4",
+        alt: "Weight Machine"
+      },
     ]
   },
   {
     title: "LazyGH",
     date: "2024-09",
-    headline: "A decentralized cross-device model training system for large-scale ML.",
-    description: "A decentralized cross-device model training system with model and tensor parallelism to reduce compute needed to train large models. The system enables efficient distribution of model training across multiple devices, optimizing resource utilization and reducing training time through innovative parallelization techniques.",
-    tags: ["Distributed Systems", "ML"],
+    headline: "TUI for managing multiple GitHub accounts easily",
+    description: "I was tired of switching between multiple GitHub accounts, so i decided to make a TUI for managing multiple GitHub accounts easily. I made it in rust in just one night, and got really roasted on the reddit, for not properly implementing the security features.",
+    tags: ["rust", "project"],
     links: [
       {
         title: "GitHub",
-        url: "#"
-      }
+        url: "https://github.com/KMJ-007/lazygh"
+      },
+      {
+        title: "Download",
+        url: "https://kmj-007.github.io/lazygh/"
+      },
     ],
     images: [
       {
-        src: "https://fastly.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U",
-        alt: "Sample project image 1"
+        src: "/images/lazygh.gif",
+        alt: "LazyGH"
       }
     ]
   },
   {
-    title: "Finnovate-IIT ghandhinagar",
+    title: "Zeta",
     date: "2024-06",
-    headline: "A decentralized cross-device model training system for large-scale ML.",
-    description: "A decentralized cross-device model training system with model and tensor parallelism to reduce compute needed to train large models. The system enables efficient distribution of model training across multiple devices, optimizing resource utilization and reducing training time through innovative parallelization techniques.",
-    tags: ["Distributed Systems", "ML"],
+    headline: "Solving financial literacy through AI",
+    description: "Won hackathon at IIT Gandhinagar by building a solution for financial literacy. Created a dual approach: 1) A gamified community platform for tech-savvy users to share experiences and learn from peers 2) A voice-based AI system using GROQ for rural users to get financial advice in their local language through simple phone calls. Built the backend and LLM integration using Python and Twilio for call handling. The platform helps reduce financial fraud, improves access to government schemes, and makes financial education accessible to illiterate users.",
+    tags: ["AI", "Fintech", "Hackathon", "GROQ", "Python"],
     links: [
       {
-        title: "GitHub",
-        url: "#"
+        title: "Blog",
+        url: "https://kmj-007.github.io/project/Finnovate-Zeta/"
       }
     ],
     images: [
       {
-        src: "https://fastly.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U",
-        alt: "Sample project image 1"
+        src: "https://www.youtube.com/watch?v=nqWEmMi3Ml0",
+        type: "youtube",
+        videoId: "nqWEmMi3Ml0",
+        alt: "Finnovate"
+      },
+      {
+        src: "/images/iit_g.jpeg",
+        alt: "Zeta"
+      },
+      {
+        src: "/images/newspaper.webp",
+        alt: "Zeta"
       }
     ]
   },
   {
-    title: "Misato Ai Companion",
+    title: "Misato AI Companion",
     date: "2024-03",
-    headline: "A decentralized cross-device model training system for large-scale ML.",
-    description: "A decentralized cross-device model training system with model and tensor parallelism to reduce compute needed to train large models. The system enables efficient distribution of model training across multiple devices, optimizing resource utilization and reducing training time through innovative parallelization techniques.",
-    tags: ["Distributed Systems", "ML"],
+    headline: "AI companion designed to combat GenZ loneliness and promote mental well-being",
+    description: "Built during Ingenious Hackathon 5.0, Misato is an AI companion that helps GenZ combat loneliness and mental health issues. It features a 3D model interface for natural interaction, real-time conversations using LLMs, and text-to-speech capabilities. The system includes a dashboard to connect users with family and friends, alerting them when someone needs support. Key features include deep conversation capabilities, personalized interactions, and a bias-free approach to mental health support. Built using Python, Next.js, ElevenLabs for voice synthesis, and Llama.",
+    tags: ["AI", "Mental Health", "Next.js", "Python", "ElevenLabs", "Llama", "Hackathon"],
     links: [
       {
         title: "GitHub",
-        url: "#"
+        url: "https://github.com/KMJ-007/misato-ai-companion"
+      },
+      {
+        title: "Devfolio",
+        url: "https://devfolio.co/projects/misato-ai-companion-e5bb"
+      },
+      {
+        title: "Demo",
+        url: "https://www.youtube.com/clip/UgkxNJoE8hYOH3y9Y10JrLV3x33d100ROyRh"
       }
     ],
     images: [
       {
-        src: "https://fastly.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U",
-        alt: "Sample project image 1"
+        src: "/images/misato.jpeg",
+        alt: "Misato AI Companion"
       }
     ]
   },
   {
     title: "RustyScheme",
     date: "2024-01",
-    headline: "A decentralized cross-device model training system for large-scale ML.",
-    description: "A decentralized cross-device model training system with model and tensor parallelism to reduce compute needed to train large models. The system enables efficient distribution of model training across multiple devices, optimizing resource utilization and reducing training time through innovative parallelization techniques.",
-    tags: ["Distributed Systems", "ML"],
+    headline: "Built a Lisp interpreter in Rust as my first project",
+    description: "After completing half of the Rust book and rustlings exercises, I wanted to build something practical to gain confidence. Created a Lisp interpreter that handles lexing (converting program text to tokens), parsing (converting tokens to recursive list structure), and evaluation. The project helped me better understand Rust concepts like traits, reference pointers, and error handling. Features include support for basic Lisp operations with plans to add floating-point values and better error handling.",
+    tags: ["Rust", "Interpreter", "Lisp", "Systems Programming"],
     links: [
       {
         title: "GitHub",
-        url: "https://github.com/daspartho/DistillClassifier"
-      }
+        url: "https://github.com/KMJ-007/RustyScheme"
+      },
+      {
+        title: "Reddit",
+        url: "https://www.reddit.com/r/rust/comments/1ae52te/built_a_lisp_interpreter_in_rust_roast_my_code/"
+      },
     ],
     images: [
-      {
-        src: "https://fastly.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U",
-        alt: "Sample project image 1"
-      }
+    
     ]
   },
   {
     title: "Hackclub Workshop",
     date: "2023-12",
     headline: "Creative coding workshop at epoch delhi hackclub.",
-    description: "A decentralized cross-device model training system with model and tensor parallelism to reduce compute needed to train large models. The system enables efficient distribution of model training across multiple devices, optimizing resource utilization and reducing training time through innovative parallelization techniques.",
-    tags: ["Distributed Systems", "ML"],
-    links: [
-      {
-        title: "producthunt",
-        url: "#"
-      }
-    ],
+    description: "Hackclub organised a EPOCH hackathon, which was really good experience, i flew to delhi to participate, i am part of hackclub from 11th std, and seeing other hackclubers and making new friends was awesome. \n I took workshop on creative coding and taught others what is creative coding and what you can do with it.",
+    tags: ["Creative Coding", "Workshop"],
     images: [
       {
-        src: "https://fastly.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U",
-        alt: "Sample project image 1"
+        src: "/images/epoch.jpg",
+        alt: "Hackclub epoch"
       }
     ]
   },
   {
     title: "Snapcraft",
     date: "2023-11",
-    headline: "A decentralized cross-device model training system for large-scale ML.",
-    description: "A decentralized cross-device model training system with model and tensor parallelism to reduce compute needed to train large models. The system enables efficient distribution of model training across multiple devices, optimizing resource utilization and reducing training time through innovative parallelization techniques.",
-    tags: ["Distributed Systems", "ML"],
+    headline: "AI-powered product photography enhancement tool for e-commerce businesses",
+    description: "Built a SaaS platform that helps businesses create professional product photos using AI. The tool automatically removes backgrounds, enhances image quality, and generates Instagram-ready product images in seconds. Key features include one-click background removal, AI image enhancement, and WhatsApp integration for easy access. The platform is specifically designed for small businesses and garment workshops who need professional product photos but don't have expertise in DALL-E or Midjourney.",
+    tags: ["AI", "Diffusion Model", "E-commerce"],
     links: [
       {
-        title: "producthunt",
-        url: "#"
+        title: "Website",
+        url: "https://snapcraft.shipmyapp.in/"
       }
     ],
     images: [
       {
-        src: "https://fastly.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U",
-        alt: "Sample project image 1"
+        src: "/images/snapcraft.jpeg",
+        alt: "Snapcraft"
       }
     ]
   },
   {
     title: "DistillClassifier",
     date: "2023-08",
-    headline: "A decentralized cross-device model training system for large-scale ML.",
-    description: "A decentralized cross-device model training system with model and tensor parallelism to reduce compute needed to train large models. The system enables efficient distribution of model training across multiple devices, optimizing resource utilization and reducing training time through innovative parallelization techniques.",
-    tags: ["Distributed Systems", "ML"],
+    headline: "Tool to generate synthetic training data for classification tasks using LLMs",
+    description: "Built during ANARCHY October 2023 Hackathon, DistillClassifier is built on top of LLM-VM to generate synthetic training data using LLMs. The tool helps distill LLM knowledge into smaller, faster classification models. Features include customizable data generation, flexible model selection, and direct integration with Hugging Face for dataset publishing.",
+    tags: ["LLM", "Synthetic Data", "Hackathon"],
     links: [
       {
         title: "GitHub",
@@ -187,55 +220,59 @@ export const projects: Project[] = [
     ],
     images: [
       {
-        src: "https://fastly.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U",
-        alt: "Sample project image 1"
+        src: "/images/distillclassifier.png",
+        alt: "DistillClassifier"
       }
     ]
   },
   {
     title: "WarpLearn-Research Paper buddy",
     date: "2023-04",
-    headline: "A decentralized cross-device model training system for large-scale ML.",
-    description: "A decentralized cross-device model training system with model and tensor parallelism to reduce compute needed to train large models. The system enables efficient distribution of model training across multiple devices, optimizing resource utilization and reducing training time through innovative parallelization techniques.",
-    tags: ["Distributed Systems", "ML"],
+    headline: "Interactive AI tool for understanding and summarizing complex documents like research papers and legal contracts",
+    description: "Built during Hack-NU-thon 4.0, WarpLearn makes it easier to work with long documents by providing an interactive way to learn and summarize complex content. The tool uses vector embeddings and ML algorithms to enable real-time Q&A within document context. Features include PDF loading and splitting, persistent vector storage using Qdrant database, and an intuitive UI for document interaction. Won Grand Prize First at the hackathon. Built with FastAPI, React, Langchain, and Hugging Face.",
+    tags: ["AI","project","Hackathon"],
     links: [
       {
-        title: "GitHub",
-        url: "#"
+        title: "Youtube",
+        url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+      },
+      {
+        title: "Devfolio",
+        url: "https://devfolio.co/projects/warplearn-a56b"
       }
     ],
     images: [
       {
-        src: "https://fastly.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U",
-        alt: "Sample project image 1"
+        src: "/images/warplearn.jpeg",
+        alt: "WarpLearn Interface"
       }
     ]
   },
-  {
-    title: "AR-Direction-compass",
-    date: "2023-03",
-    headline: "A decentralized cross-device model training system for large-scale ML.",
-    description: "A decentralized cross-device model training system with model and tensor parallelism to reduce compute needed to train large models. The system enables efficient distribution of model training across multiple devices, optimizing resource utilization and reducing training time through innovative parallelization techniques.",
-    tags: ["AR", "hackathon"],
-    links: [
-      {
-        title: "producthunt",
-        url: "#"
-      }
-    ],
-    images: [
-      {
-        src: "https://fastly.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U",
-        alt: "Sample project image 1"
-      }
-    ]
-  },
+  // {
+  //   title: "AR-Direction-compass",
+  //   date: "2023-03",
+  //   headline: "A decentralized cross-device model training system for large-scale ML.",
+  //   description: "A decentralized cross-device model training system with model and tensor parallelism to reduce compute needed to train large models. The system enables efficient distribution of model training across multiple devices, optimizing resource utilization and reducing training time through innovative parallelization techniques.",
+  //   tags: ["AR", "hackathon"],
+  //   links: [
+  //     {
+  //       title: "producthunt",
+  //       url: "#"
+  //     }
+  //   ],
+  //   images: [
+  //     {
+  //       src: "https://fastly.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U",
+  //       alt: "Sample project image 1"
+  //     }
+  //   ]
+  // },
   {
     title: "Smart Agent",
     date: "2022-09",
-    headline: "One  for all the textile agents to manage their business, 1700cr GMV till date(31st Dec 2024)",
-    description: "I taught creative coding to local college students. I taught them how to code in python and how to use p5js to create interactive art, yes you can make art with code. I also taught them how to use AI to generate art. It was a fun experience to teach and learn from them.",
-    tags: ["startup"],
+    headline: "Record keeping solution for all the textile agents to manage their business, 1700cr GMV till date(31st Dec 2024)",
+    description: "I was the first intern to join the smartagent, I did everything, From making the first version of the app to rewriting it 3 times, from going on sales, giving demo to the clients, to making the wanted changes in forward-deployed engineer's way of working, I learned a lot of how b2b business works, and lot of business jargons, and how trust and privacy can't be compromised!",
+    tags: ["internship"],
     links: [
       {
         title: "Demo",
