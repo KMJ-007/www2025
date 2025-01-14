@@ -60,7 +60,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       <div className="group relative bg-neutral-900/30 p-4 sm:p-5 transition-all hover:bg-neutral-900/50 rounded-lg w-full h-full flex flex-col">
         <div className="flex flex-col h-full">
           <div className="flex items-start justify-between gap-3">
-            <h3 className="font-mono text-base tracking-[0.2em] text-neutral-200 group-hover:text-green-400 transition-colors">
+            <h3 className="font-mono text-base tracking-[0.1em] text-neutral-200 group-hover:text-green-400 transition-colors">
               {project.title}
             </h3>
             <span className="font-mono text-xs text-neutral-500 tracking-wider whitespace-nowrap">

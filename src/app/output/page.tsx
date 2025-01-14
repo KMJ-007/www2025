@@ -36,14 +36,14 @@ export default function Output() {
     .sort((a, b) => b - a);
 
   return (
-    <div className="flex-1 w-full max-w-screen-xl mx-auto px-4 sm:px-6 mt-10">
-      <div className="space-y-16 sm:space-y-24">
+    <div className="flex-1 w-full max-w-screen-xl mx-auto px-3 sm:px-6 mt-4 sm:mt-6">
+      <div className="space-y-12 sm:space-y-24">
         {years.map((year) => (
-          <section key={year} className="space-y-6 sm:space-y-8">
-            <h2 className="font-mono text-2xl sm:text-3xl text-neutral-200 tracking-wider">
+          <section key={year} className="space-y-4 sm:space-y-8">
+            <h2 className="font-mono text-xl sm:text-3xl text-neutral-200 tracking-wider">
               {year}
             </h2>
-            <div className="grid gap-6 sm:gap-8 lg:grid-cols-2 xl:grid-cols-3">
+            <div className="grid gap-4 sm:gap-6 grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
               {projectsByYear[year]
                 .sort((a, b) => b.date.localeCompare(a.date))
                 .map((project) => (

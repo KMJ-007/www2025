@@ -35,7 +35,7 @@ export default function RootLayout({
                 <ArenaQuote />
               </header>
               
-              <div className="flex flex-col sm:flex-row gap-8">
+              <div className="flex flex-col sm:flex-row gap-6">
                 <Navigation />
                 <main className="flex-1">
                   {children}

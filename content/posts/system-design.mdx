@@ -1,0 +1,40 @@
+---
+title: "Quick Thought on System Design"
+date: "2024-03-15"
+description: "Understanding CAP theorem trade-offs in distributed systems"
+---
+
+When designing distributed systems, one of the first considerations should be the CAP theorem trade-offs.
+
+## What is CAP Theorem?
+
+The CAP theorem states that a distributed system can only provide two of the following three guarantees:
+
+- **Consistency**: Every read receives the most recent write
+- **Availability**: Every request receives a response
+- **Partition tolerance**: The system continues to operate despite network failures
+
+## Real-world Examples
+
+```js
+// Example of eventual consistency in a distributed cache
+const cache = new DistributedCache({
+  consistency: "eventual",
+  replicas: 3
+});
+
+await cache.set("key", "value");
+// Value might not be immediately available on all replicas
+```
+
+## Interactive Example
+
+Try clicking the button below to simulate network partition:
+
+<NetworkPartitionDemo />
+
+## Key Takeaways
+
+1. Choose your trade-offs based on business requirements
+2. Consider the specific needs of your application
+3. Don't blindly follow what others are doing 
