@@ -1,11 +1,11 @@
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { getPostBySlug, getAllPosts } from '@/lib/mdx';
-import NetworkPartitionDemo from '@/components/mdx/NetworkPartitionDemo';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import GameOfLife from '@/components/mdx/GameOfLife';
 
 const components = {
-  NetworkPartitionDemo,
+  GameOfLife,
 };
 
 export async function generateStaticParams() {
@@ -18,9 +18,6 @@ export async function generateStaticParams() {
 export default async function Post({ params }: { params: { slug: string } }) {
   try {
     const { frontmatter, content } = await getPostBySlug(params.slug);
-    const date = new Date(frontmatter.date);
-    const year = date.getFullYear();
-    const month = date.toLocaleString('en-US', { month: 'short' });
 
     return (
       <div className="flex-1 w-full max-w-screen-xl mx-auto px-4 sm:px-6 mt-6">
@@ -29,9 +26,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
             ← back to notes
           </Link>
           <div className="space-y-2">
-            <time className="text-sm font-mono text-foreground/50">
-              {year}.{month}
-            </time>
+
             <h1 className="font-mono text-2xl sm:text-3xl text-neutral-200 tracking-wider">
               {frontmatter.title}
             </h1>
