@@ -23,21 +23,21 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistMono.variable}`}>
-        <div className="min-h-screen px-3 py-2 sm:px-4 sm:py-4">
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-16">
-            <div className="flex-1 max-w-[680px] mx-auto w-full">
-              <header className="flex flex-col gap-3 mt-6 sm:mt-0 mb-8">
+        <div className="min-h-screen p-2 sm:p-4">
+          <div className="flex flex-col sm:flex-row gap-8 sm:gap-16 p-0 sm:p-4">
+            <div className="flex-1">
+              <header className="flex flex-col gap-4 sm:mt-0 mt-12">
                 <Link href="/" className="hover:opacity-80 transition-opacity w-fit">
-                  <h1 className="text-2xl sm:text-3xl font-bold tracking-tighter">
+                  <h1 className="text-4xl font-bold">
                     Karan Janthe
                   </h1>
                 </Link>
                 <ArenaQuote />
               </header>
               
-              <div className="flex flex-col gap-8">
+              <div className="flex flex-col sm:flex-row gap-6">
                 <Navigation />
-                <main className="flex-1 pb-24">
+                <main className="flex-1">
                   {children}
                 </main>
               </div>
