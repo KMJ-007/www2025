@@ -25,8 +25,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Install Bun
-        run: curl -fsSL https://bun.sh/install | bash
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
 
       - name: Install dependencies
         run: bun install
