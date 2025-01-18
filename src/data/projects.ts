@@ -18,6 +18,34 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: "Eyes On U 👀",
+    date: "2025-01",
+    headline: "Exploring the universal feeling of being watched",
+    description: "In a world where we're constantly being observed, judged, and influenced, the feeling of being watched is a universal phenomenon that transcends cultures and boundaries. This interactive art piece uses eye-tracking effects to create an immersive experience where multiple eyes follow your cursor (on desktop) or device movement (on mobile). Features include dynamic pupil movement based on cursor position/device orientation, chaos mode with random eye movements, and a dance mode with synchronized eye movements to music.",
+    tags: ["Creative Coding", "Interactive Art", "Next.js", "TypeScript"],
+    links: [
+      {
+        title: "Try it out",
+        url: "https://eyesonu.vercel.app/"
+      },
+      {
+        title: "GitHub",
+        url: "https://github.com/KMJ-007/eyesonu"
+      }
+    ],
+    images: [
+      {
+        src: "/images/eyes.mov",
+        alt: "Eyes On U",
+        type: "video"
+      },
+      {
+        src: "/images/eyes.jpeg",
+        alt: "Eyes On U"
+      }
+    ]
+  },
+  {
     title: "Bindi Sheth",
     date: "2025-01",
     headline: "Created a website for Bindi Sheth to showcase her work, she is documentary and fashion photographer.",
