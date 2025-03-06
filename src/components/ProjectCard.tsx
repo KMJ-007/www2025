@@ -57,10 +57,10 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
   return (
     <>
-      <div className="group relative overflow-hidden bg-[#1a1a2e]/80 p-4 sm:p-5 transition-all hover:bg-[#1a1a2e] rounded-lg w-full h-full flex flex-col border border-[#4e1c5d]/20 backdrop-blur-sm before:absolute before:inset-0 before:bg-gradient-to-r before:from-[#4e1c5d]/5 before:to-[#9c27b0]/5 before:opacity-0 before:transition-opacity hover:before:opacity-100">
-        <div className="flex flex-col h-full relative">
+      <div className="group relative overflow-hidden sci-fi-card p-4 sm:p-5 w-full h-full flex flex-col">
+        <div className="sci-fi-card-content flex flex-col h-full relative">
           <div className="flex items-start justify-between gap-3 relative">
-            <h3 className="font-mono text-base tracking-[0.1em] text-[#d4bbf9] group-hover:text-[#b341e9] transition-all duration-300 relative before:absolute before:h-[1px] before:w-0 group-hover:before:w-full before:bottom-0 before:left-0 before:bg-[#b341e9] before:transition-all before:duration-300">
+            <h3 className="font-mono text-base tracking-[0.1em] text-[#d4bbf9] group-hover:text-[#e371fc] transition-all duration-300 relative before:absolute before:h-[1px] before:w-0 group-hover:before:w-full before:bottom-0 before:left-0 before:bg-[#e371fc] before:transition-all before:duration-300">
               {project.title}
             </h3>
             <span className="font-mono text-xs text-[#6c4d83] tracking-wider whitespace-nowrap group-hover:text-[#9c27b0] transition-colors">
@@ -69,7 +69,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           </div>
 
           <div className="mt-4 space-y-4 flex-1">
-            <p className="text-sm text-[#b8a1d9] font-mono leading-6 relative">
+            <p className="text-sm text-[#d4bbf9] font-mono leading-6 relative">
               {project.headline}
             </p>
             
@@ -87,7 +87,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               <button
                 type="button"
                 onClick={() => setShowDescription(!showDescription)}
-                className="text-xs text-[#6c4d83] hover:text-[#b341e9] font-mono tracking-wider transition-colors"
+                className="sci-fi-link"
               >
                 [{showDescription ? 'Show Less' : 'Read More'}]
               </button>
@@ -95,10 +95,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
             <div className="flex flex-wrap gap-1.5">
               {project.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="font-mono text-[10px] text-[#a5ff9e] bg-[#2d1f3d] px-2 py-0.5 rounded-full tracking-wider border border-[#4e1c5d]/30 shadow-[0_0_10px_rgba(163,71,255,0.1)]"
-                >
+                <span key={tag} className="sci-fi-tag">
                   {tag}
                 </span>
               ))}
@@ -112,7 +109,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                   <Link
                     key={link.title}
                     href={link.url}
-                    className="text-xs text-[#9785b3] hover:text-[#b341e9] transition-colors font-mono tracking-wider relative before:absolute before:h-[1px] before:w-0 hover:before:w-full before:bottom-0 before:left-0 before:bg-[#b341e9] before:transition-all before:duration-300"
+                    className="sci-fi-link"
                   >
                     [{link.title}] →
                   </Link>
@@ -126,8 +123,9 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               <button
                 type="button"
                 onClick={() => openGallery(0)}
-                className="relative aspect-video w-full overflow-hidden rounded-lg bg-[#1a1a2e] hover:bg-[#2d1f3d] transition-all duration-300 border border-[#4e1c5d]/30 shadow-[0_0_20px_rgba(163,71,255,0.15)]"
+                className="relative aspect-video w-full overflow-hidden rounded-lg bg-[#2d1f3d] bg-opacity-20 hover:bg-opacity-30 transition-all duration-500 border border-[#e371fc] border-opacity-10 hover:border-opacity-20 group/image"
               >
+                <div className="absolute inset-0 bg-gradient-to-r from-[#e371fc]/5 via-transparent to-[#a5ff9e]/5 opacity-0 group-hover/image:opacity-100 transition-opacity duration-500" />
                 {project.images[0].type === 'youtube' && project.images[0].videoId ? (
                   <YouTubeEmbed videoId={project.images[0].videoId} />
                 ) : project.images[0].type === 'video' ? (
@@ -137,9 +135,10 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                     src={project.images[0].src}
                     alt={project.images[0].alt}
                     fill
-                    className="object-cover transition-all duration-300 group-hover:scale-105"
+                    className="object-cover transition-all duration-500 group-hover/image:scale-105"
                   />
                 )}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0c0a14]/50 via-transparent to-transparent opacity-0 group-hover/image:opacity-100 transition-opacity duration-500" />
               </button>
 
               {project.images.length > 1 && (
@@ -149,7 +148,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                       key={image.src}
                       type="button"
                       onClick={() => openGallery(index + 1)}
-                      className="relative h-12 w-16 flex-shrink-0 overflow-hidden rounded bg-[#1a1a2e] hover:bg-[#2d1f3d] transition-all duration-300 border border-[#4e1c5d]/30"
+                      className="relative h-12 w-16 flex-shrink-0 overflow-hidden rounded bg-[#2d1f3d] bg-opacity-20 hover:bg-opacity-30 transition-all duration-300 border border-[#e371fc] border-opacity-10 hover:border-opacity-20 hover:shadow-[0_0_15px_rgba(227,113,252,0.15)]"
                     >
                       {image.type === 'youtube' ? (
                         <Image
@@ -159,7 +158,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                           className="object-cover"
                         />
                       ) : image.type === 'video' ? (
-                        <div className="w-full h-full flex items-center justify-center bg-[#1a1a2e]">
+                        <div className="w-full h-full flex items-center justify-center bg-[#2d1f3d] bg-opacity-30">
                           <span className="text-xs text-[#9785b3]">Video</span>
                         </div>
                       ) : (
@@ -191,7 +190,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         <div 
           role="button"
           tabIndex={0}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-[#1a1a2e]/95 backdrop-blur-sm p-4"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-[#0c0a14] bg-opacity-95 backdrop-blur-md p-4"
           onClick={() => setShowGallery(false)}
           onKeyDown={handleKeyDown}
         >
@@ -205,7 +204,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             <button
               type="button"
               onClick={() => setShowGallery(false)}
-              className="absolute right-0 top-0 z-10 text-[#b341e9]/70 hover:text-[#b341e9] font-mono p-4 transition-colors"
+              className="absolute right-0 top-0 z-10 text-[#e371fc] text-opacity-70 hover:text-opacity-100 font-mono p-4 transition-colors"
             >
               [ESC]
             </button>
@@ -215,7 +214,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 alt={project.images[0].alt}
                 width={1920}
                 height={1080}
-                className="object-contain max-h-[85vh] w-auto h-auto"
+                className="object-contain max-h-[85vh] w-auto h-auto rounded-lg border border-[#e371fc] border-opacity-10"
                 priority
               />
             </div>

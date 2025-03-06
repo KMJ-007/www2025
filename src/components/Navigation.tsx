@@ -42,41 +42,42 @@ export default function Navigation() {
             <li key={item.path}>
               <Link
                 href={item.path}
-                className={`nav-item ${pathname === item.path ? 'active' : ''}`}
+                className={`nav-item relative overflow-hidden ${
+                  pathname === item.path 
+                    ? 'active before:absolute before:inset-0 before:bg-accent/5 before:animate-pulse' 
+                    : ''
+                }`}
               >
-                {item.label}
+                <span className="relative z-10">{item.label}</span>
               </Link>
             </li>
           ))}
         </ul>
-        
-       
       </nav>
 
       {/* Mobile Navigation */}
       <div className="sm:hidden">
         <motion.button
           onClick={() => setIsOpen(!isOpen)}
-          className="fixed top-8 right-8 z-50 w-10 h-10 flex flex-col justify-center items-center gap-1.5"
+          className="fixed top-8 right-8 z-50 w-10 h-10 flex flex-col justify-center items-center gap-1.5 sci-fi-button"
           aria-label="Toggle menu"
-          animate={isOpen ? { backgroundColor: 'rgba(255,255,255,0.1)' } : { backgroundColor: 'rgba(255,255,255,0)' }}
-          whileHover={{ backgroundColor: 'rgba(255,255,255,0.1)' }}
+          animate={isOpen ? { backgroundColor: 'rgba(227,113,252,0.1)' } : { backgroundColor: 'transparent' }}
+          whileHover={{ backgroundColor: 'rgba(227,113,252,0.1)' }}
           whileTap={{ scale: 0.95 }}
           initial={false}
-          style={{ borderRadius: '8px' }}
         >
           <motion.span
             animate={isOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
-            className="w-6 h-0.5 bg-foreground block origin-center"
+            className="w-6 h-0.5 bg-accent block origin-center"
             style={{ transformOrigin: 'center' }}
           />
           <motion.span
             animate={isOpen ? { opacity: 0, x: -20 } : { opacity: 1, x: 0 }}
-            className="w-6 h-0.5 bg-foreground block"
+            className="w-6 h-0.5 bg-accent block"
           />
           <motion.span
             animate={isOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }}
-            className="w-6 h-0.5 bg-foreground block origin-center"
+            className="w-6 h-0.5 bg-accent block origin-center"
             style={{ transformOrigin: 'center' }}
           />
         </motion.button>
@@ -88,7 +89,7 @@ export default function Navigation() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: '100%' }}
               transition={{ type: "spring", bounce: 0.25 }}
-              className="fixed inset-0 bg-background/95 backdrop-blur-md z-40 flex items-center justify-center"
+              className="fixed inset-0 z-40 bg-background/95 backdrop-blur-md flex items-center justify-center"
             >
               <motion.ul 
                 className="flex flex-col gap-6 text-2xl items-center"
@@ -118,7 +119,11 @@ export default function Navigation() {
                     >
                       <Link
                         href={item.path}
-                        className={`nav-item ${pathname === item.path ? 'active' : ''}`}
+                        className={`nav-item text-lg ${
+                          pathname === item.path 
+                            ? 'active sci-fi-text' 
+                            : ''
+                        }`}
                         onClick={() => setIsOpen(false)}
                       >
                         {item.label}

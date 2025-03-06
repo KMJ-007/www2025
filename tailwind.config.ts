@@ -12,7 +12,20 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        accent: "var(--accent)",
+        accent: {
+          DEFAULT: "var(--accent)",
+          dark: "var(--accent-dark)",
+          light: "var(--accent-light)",
+        },
+        secondary: {
+          DEFAULT: "var(--secondary)",
+          dark: "var(--secondary-dark)",
+        },
+        text: {
+          primary: "var(--text-primary)",
+          secondary: "var(--text-secondary)",
+          tertiary: "var(--text-tertiary)",
+        }
       },
       textColor: {
         foreground: {
@@ -24,10 +37,15 @@ const config: Config = {
         scan: {
           '0%': { transform: 'translateY(-100%)' },
           '100%': { transform: 'translateY(100%)' }
+        },
+        pulse: {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0.5' }
         }
       },
       animation: {
-        scan: 'scan 2s linear infinite'
+        scan: 'scan 2s linear infinite',
+        pulse: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite'
       },
       typography: {
         DEFAULT: {

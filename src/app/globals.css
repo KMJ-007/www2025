@@ -3,23 +3,149 @@
 @tailwind utilities;
 
 :root {
-  --background: #0a0a0a;
-  --foreground: #ededed;
-  --accent: #ff00ff;
+  --background: #0c0a14;
+  --foreground: #f2e4ff;
+  --accent: #e371fc;
+  --accent-dark: #9c27b0;
+  --accent-light: #f7b5ff;
+  --secondary: #a5ff9e;
+  --secondary-dark: #2d1f3d;
+  --text-primary: #d4bbf9;
+  --text-secondary: #9785b3;
+  --text-tertiary: #6c4d83;
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@property --shimmer-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}
+
+@keyframes shimmer {
+  to {
+    --shimmer-angle: 360deg;
+  }
+}
+
+@keyframes pulse-subtle {
+  0%, 100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: var(--font-geist-mono);
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(163, 71, 255, 0.15), transparent 50%),
+    radial-gradient(circle at 85% 30%, rgba(227, 113, 252, 0.1), transparent 50%);
+  min-height: 100vh;
 }
 
 @layer components {
   .nav-item {
-    @apply text-[#ededed70] hover:text-foreground transition-colors;
+    @apply text-[#9785b3] hover:text-accent transition-all duration-300 relative;
   }
 
   .nav-item.active {
-    @apply text-foreground;
+    @apply text-accent before:absolute before:bottom-0 before:left-0 before:w-full before:h-px before:bg-accent before:opacity-50;
+  }
+
+  .sci-fi-border {
+    @apply relative;
+    background: conic-gradient(from var(--angle), var(--accent-dark), var(--accent), var(--accent-dark));
+    animation: rotate 4s linear infinite;
+  }
+
+  .sci-fi-card {
+    @apply relative bg-[#2d1f3d] bg-opacity-10 backdrop-blur-sm border border-[#e371fc] border-opacity-10 
+           rounded-lg hover:border-opacity-20 transition-all duration-500
+           before:absolute before:inset-0 before:bg-gradient-to-r 
+           before:from-[#e371fc]/5 before:to-[#a5ff9e]/5 before:opacity-0 
+           before:transition-opacity hover:before:opacity-100
+           after:absolute after:inset-[1px] after:rounded-lg after:bg-[#0c0a14]/80 after:z-0
+           hover:shadow-[0_0_30px_rgba(227,113,252,0.1)] hover:scale-[1.01];
+  }
+
+  .sci-fi-card::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: 8px;
+    padding: 1px;
+    background: conic-gradient(from var(--shimmer-angle), transparent 0%, var(--accent) 15%, transparent 30%);
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: shimmer 4s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .sci-fi-card:hover::before {
+    opacity: 1;
+  }
+
+  .sci-fi-card-content {
+    @apply relative z-10;
+  }
+
+  .sci-fi-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#e371fc] to-[#f7b5ff];
+  }
+
+  .sci-fi-button {
+    @apply px-4 py-2 rounded-lg bg-[#2d1f3d] bg-opacity-30 border border-[#e371fc] border-opacity-20
+           hover:border-opacity-40 transition-all duration-300 text-[#d4bbf9]
+           hover:text-[#f7b5ff] hover:shadow-[0_0_20px_rgba(227,113,252,0.2)];
+  }
+
+  .sci-fi-input {
+    @apply bg-[#2d1f3d] bg-opacity-20 border border-[#e371fc] border-opacity-20 rounded-lg px-4 py-2
+           focus:border-opacity-40 focus:outline-none focus:ring-1 focus:ring-[#e371fc] focus:ring-opacity-30
+           text-[#d4bbf9] placeholder:text-[#6c4d83];
+  }
+
+  .sci-fi-tag {
+    @apply relative font-mono text-[10px] text-[#a5ff9e] bg-[#2d1f3d] bg-opacity-30 
+           px-2 py-0.5 rounded-full tracking-wider border border-[#e371fc] border-opacity-10 
+           shadow-[0_0_10px_rgba(227,113,252,0.1)] hover:border-opacity-20 
+           hover:shadow-[0_0_15px_rgba(227,113,252,0.2)] transition-all duration-300
+           before:absolute before:inset-0 before:rounded-full before:bg-gradient-to-r 
+           before:from-[#e371fc]/5 before:to-[#a5ff9e]/5 before:opacity-0 
+           before:transition-opacity hover:before:opacity-100;
+  }
+
+  .sci-fi-link {
+    @apply relative text-xs text-[#9785b3] hover:text-[#e371fc] transition-colors font-mono tracking-wider 
+           before:absolute before:h-[1px] before:w-0 hover:before:w-full before:bottom-0 
+           before:left-0 before:bg-[#e371fc] before:transition-all before:duration-300;
   }
 }

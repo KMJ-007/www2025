@@ -99,7 +99,7 @@ export default function ImageGallery({ images, onClose, initialIndex = 0 }: Imag
 
   return (
     <div 
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm" 
+      className="fixed inset-0 z-50 flex items-center justify-center bg-[#0c0a14] bg-opacity-95 backdrop-blur-md" 
       onClick={onClose}
       onKeyDown={(e) => {
         if (e.key === "Escape") onClose();
@@ -118,19 +118,19 @@ export default function ImageGallery({ images, onClose, initialIndex = 0 }: Imag
         <button
           type="button"
           onClick={onClose}
-          className="absolute right-4 sm:right-6 top-4 sm:top-6 z-10 text-white/70 hover:text-white font-mono"
+          className="absolute right-4 sm:right-6 top-4 sm:top-6 z-10 text-[#e371fc] text-opacity-70 hover:text-opacity-100 font-mono transition-colors"
         >
           [ESC]
         </button>
 
         {/* Navigation info */}
-        <div className="absolute left-4 sm:left-6 top-4 sm:top-6 z-10 font-mono text-sm text-white/70">
+        <div className="absolute left-4 sm:left-6 top-4 sm:top-6 z-10 font-mono text-sm text-[#9785b3]">
           {currentIndex + 1} / {images.length}
         </div>
 
         {/* Main image/video */}
         <div 
-          className="relative h-[calc(100vh-8rem)] sm:h-auto sm:aspect-video w-full overflow-hidden rounded-sm"
+          className="relative h-[calc(100vh-8rem)] sm:h-auto sm:aspect-video w-full overflow-hidden rounded-lg border border-[#e371fc] border-opacity-10 bg-[#2d1f3d] bg-opacity-20"
           onTouchStart={onTouchStart}
           onTouchMove={onTouchMove}
           onTouchEnd={onTouchEnd}
@@ -152,7 +152,7 @@ export default function ImageGallery({ images, onClose, initialIndex = 0 }: Imag
           
           {/* Touch swipe indicator */}
           {touchStart && touchEnd && Math.abs(touchStart - touchEnd) > 20 && (
-            <div className="absolute inset-0 bg-gradient-to-r from-green-500/20 to-transparent pointer-events-none" 
+            <div className="absolute inset-0 bg-gradient-to-r from-[#e371fc] from-opacity-20 to-transparent pointer-events-none" 
                  style={{
                    opacity: Math.min(Math.abs(touchStart - touchEnd) / 200, 0.3),
                    transform: `scaleX(${touchStart > touchEnd ? 1 : -1})`
@@ -167,14 +167,14 @@ export default function ImageGallery({ images, onClose, initialIndex = 0 }: Imag
             <button
               type="button"
               onClick={handlePrev}
-              className="absolute left-4 top-1/2 -translate-y-1/2 font-mono text-white/70 hover:text-white px-4 py-2"
+              className="absolute left-4 top-1/2 -translate-y-1/2 font-mono text-[#9785b3] hover:text-[#e371fc] px-4 py-2 transition-colors"
             >
               [←]
             </button>
             <button
               type="button"
               onClick={handleNext}
-              className="absolute right-4 top-1/2 -translate-y-1/2 font-mono text-white/70 hover:text-white px-4 py-2"
+              className="absolute right-4 top-1/2 -translate-y-1/2 font-mono text-[#9785b3] hover:text-[#e371fc] px-4 py-2 transition-colors"
             >
               [→]
             </button>
