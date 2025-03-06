@@ -4,6 +4,8 @@ import "./globals.css";
 import ArenaQuote from "@/components/ArenaQuote";
 import Navigation from "@/components/Navigation";
 import Link from "next/link";
+import BootSequence from "@/components/BootSequence";
+import { Suspense } from "react";
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -23,6 +25,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistMono.variable}`}>
+        <Suspense>
+          <BootSequence />
+        </Suspense>
         <div className="min-h-screen p-2 sm:p-4">
           <div className="flex flex-col sm:flex-row gap-8 sm:gap-16 p-0 sm:p-4">
             <div className="flex-1">

@@ -57,26 +57,26 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
   return (
     <>
-      <div className="group relative bg-neutral-900/30 p-4 sm:p-5 transition-all hover:bg-neutral-900/50 rounded-lg w-full h-full flex flex-col">
-        <div className="flex flex-col h-full">
-          <div className="flex items-start justify-between gap-3">
-            <h3 className="font-mono text-base tracking-[0.1em] text-neutral-200 group-hover:text-green-400 transition-colors">
+      <div className="group relative overflow-hidden bg-[#1a1a2e]/80 p-4 sm:p-5 transition-all hover:bg-[#1a1a2e] rounded-lg w-full h-full flex flex-col border border-[#4e1c5d]/20 backdrop-blur-sm before:absolute before:inset-0 before:bg-gradient-to-r before:from-[#4e1c5d]/5 before:to-[#9c27b0]/5 before:opacity-0 before:transition-opacity hover:before:opacity-100">
+        <div className="flex flex-col h-full relative">
+          <div className="flex items-start justify-between gap-3 relative">
+            <h3 className="font-mono text-base tracking-[0.1em] text-[#d4bbf9] group-hover:text-[#b341e9] transition-all duration-300 relative before:absolute before:h-[1px] before:w-0 group-hover:before:w-full before:bottom-0 before:left-0 before:bg-[#b341e9] before:transition-all before:duration-300">
               {project.title}
             </h3>
-            <span className="font-mono text-xs text-neutral-500 tracking-wider whitespace-nowrap">
+            <span className="font-mono text-xs text-[#6c4d83] tracking-wider whitespace-nowrap group-hover:text-[#9c27b0] transition-colors">
               {project.formattedDate}
             </span>
           </div>
 
           <div className="mt-4 space-y-4 flex-1">
-            <p className="text-sm text-neutral-300 font-mono leading-6">
+            <p className="text-sm text-[#b8a1d9] font-mono leading-6 relative">
               {project.headline}
             </p>
             
             {showDescription && (
               <div className="relative">
                 <div className="overflow-hidden transition-all duration-300">
-                  <p className="text-xs text-neutral-400 font-mono leading-5 whitespace-pre-line">
+                  <p className="text-xs text-[#9785b3] font-mono leading-5 whitespace-pre-line">
                     {project.description}
                   </p>
                 </div>
@@ -87,7 +87,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               <button
                 type="button"
                 onClick={() => setShowDescription(!showDescription)}
-                className="text-xs text-neutral-500 hover:text-neutral-400 font-mono tracking-wider"
+                className="text-xs text-[#6c4d83] hover:text-[#b341e9] font-mono tracking-wider transition-colors"
               >
                 [{showDescription ? 'Show Less' : 'Read More'}]
               </button>
@@ -97,7 +97,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               {project.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="font-mono text-[10px] text-green-500/70 bg-green-900/20 px-2 py-0.5 rounded-full tracking-wider"
+                  className="font-mono text-[10px] text-[#a5ff9e] bg-[#2d1f3d] px-2 py-0.5 rounded-full tracking-wider border border-[#4e1c5d]/30 shadow-[0_0_10px_rgba(163,71,255,0.1)]"
                 >
                   {tag}
                 </span>
@@ -112,7 +112,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                   <Link
                     key={link.title}
                     href={link.url}
-                    className="text-xs text-neutral-400 hover:text-green-400 transition-colors font-mono tracking-wider"
+                    className="text-xs text-[#9785b3] hover:text-[#b341e9] transition-colors font-mono tracking-wider relative before:absolute before:h-[1px] before:w-0 hover:before:w-full before:bottom-0 before:left-0 before:bg-[#b341e9] before:transition-all before:duration-300"
                   >
                     [{link.title}] →
                   </Link>
@@ -126,7 +126,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               <button
                 type="button"
                 onClick={() => openGallery(0)}
-                className="relative aspect-video w-full overflow-hidden rounded-lg bg-neutral-800/50 hover:bg-neutral-800/70 transition-colors"
+                className="relative aspect-video w-full overflow-hidden rounded-lg bg-[#1a1a2e] hover:bg-[#2d1f3d] transition-all duration-300 border border-[#4e1c5d]/30 shadow-[0_0_20px_rgba(163,71,255,0.15)]"
               >
                 {project.images[0].type === 'youtube' && project.images[0].videoId ? (
                   <YouTubeEmbed videoId={project.images[0].videoId} />
@@ -149,7 +149,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                       key={image.src}
                       type="button"
                       onClick={() => openGallery(index + 1)}
-                      className="relative h-12 w-16 flex-shrink-0 overflow-hidden rounded bg-neutral-800/50 hover:bg-neutral-800/70 transition-colors"
+                      className="relative h-12 w-16 flex-shrink-0 overflow-hidden rounded bg-[#1a1a2e] hover:bg-[#2d1f3d] transition-all duration-300 border border-[#4e1c5d]/30"
                     >
                       {image.type === 'youtube' ? (
                         <Image
@@ -159,8 +159,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                           className="object-cover"
                         />
                       ) : image.type === 'video' ? (
-                        <div className="w-full h-full flex items-center justify-center bg-neutral-800">
-                          <span className="text-xs text-neutral-400">Video</span>
+                        <div className="w-full h-full flex items-center justify-center bg-[#1a1a2e]">
+                          <span className="text-xs text-[#9785b3]">Video</span>
                         </div>
                       ) : (
                         <Image
@@ -191,7 +191,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         <div 
           role="button"
           tabIndex={0}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 p-4"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-[#1a1a2e]/95 backdrop-blur-sm p-4"
           onClick={() => setShowGallery(false)}
           onKeyDown={handleKeyDown}
         >
@@ -205,7 +205,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             <button
               type="button"
               onClick={() => setShowGallery(false)}
-              className="absolute right-0 top-0 z-10 text-white/70 hover:text-white font-mono p-4"
+              className="absolute right-0 top-0 z-10 text-[#b341e9]/70 hover:text-[#b341e9] font-mono p-4 transition-colors"
             >
               [ESC]
             </button>
