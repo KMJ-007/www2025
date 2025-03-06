@@ -18,6 +18,30 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: "PDFBuddy",
+    date: "2025-02",
+    headline: "Edit PDF with your while chatting",
+    description: "PDFBuddy is a tool that allows you to edit PDF files with your while chatting. friend said it would be really cool if we can edit PDF as i am chatting, so i thought why not, and built this.",
+    tags: ["Nextjs","Tailwind"],
+    links: [
+      {
+        title: "Live Demo",
+        url: "http://pdfbuddy-lake.vercel.app/"
+      },
+      {
+        title: "GitHub",
+        url: "https://github.com/KMJ-007/pdfbuddy"
+      }
+    ],
+    images: [
+      {
+        src: "/images/pdfbuddy.jpeg",
+        alt: "PDFBuddy"
+      }
+    ]
+
+  },
+  {
     title: "Eyes On U 👀",
     date: "2025-01",
     headline: "Exploring the universal feeling of being watched",
